@@ -1,16 +1,33 @@
-{% extends 'base.html' %}
+{% load static %}
 
-{% block content %}
-<h1>Hello {{name}}!!!!</h1>
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-<form action="add" method='post'>
+<div class="grid-container">
 
-    {% csrf_token %}
+    {% for image in images %}
 
-    Enter 1st number : <input type="text" name="num1"><br>
-    Enter 2nd number : <input type="text" name="num2"><br>
-    <input type="submit">
+        <div class="grid-item">
+            <div class="second">
+                <img src="{{image.image.url}}" class="grid-image">
+                {% if image.discount > 0 %}
+                    <div class="ribbon onSale">{{image.discount_view}} off</div>
+                {% endif %}
 
-</form>
+                {% if image.count == 0 %}
+                    <div class="ribbon soldOut">Sold Out</div>
+                {% endif %}
+            </div>
+            <div>
+            <h3>{{image.name}}</h3>
+            </div>
+            <div>
+                <p>{{image.desc}}</p>
+            </div>
+            <div>
+                Price: ${{image.price_view}}
+            </div>
+        </div>
 
-{% endblock %}
+    {% endfor %}
+
+</div>
