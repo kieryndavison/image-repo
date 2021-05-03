@@ -7,11 +7,11 @@ class ImageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Image
-        fields = ['name', 'image', 'desc', 'owner', 'price', 'discount', 'stock']
+        fields = ['url', 'id', 'name', 'image', 'desc', 'owner', 'price', 'discount', 'stock']
 
 class UserSerializer(serializers.ModelSerializer):
-    images = serializers.PrimaryKeyRelatedField(many=True, queryset=Image.objects.all())
+    images = serializers.HyperlinkedRelatedField(many=True, view_name='image-detail', read_only=True)
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'images']
+        fields = ['url', 'id', 'username', 'images']
