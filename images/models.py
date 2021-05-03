@@ -11,6 +11,7 @@ class Image(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     discount = models.DecimalField(max_digits=5, decimal_places=2)
     stock = models.IntegerField(default=0)
+    owner = models.ForeignKey('auth.User', related_name='images', on_delete=models.CASCADE, default=1)
 
     def image_view(self):
         if self.image:
