@@ -8,11 +8,6 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 
-# def home(request):
-#     images = Image.objects.all()
-
-#     return render(request, 'home.html', {'images': images})
-
 class ImageViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list`, `create`, `retrieve`,
@@ -22,11 +17,6 @@ class ImageViewSet(viewsets.ModelViewSet):
     serializer_class = ImageSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly]
-
-    # @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer])
-    # def highlight(self, request, *args, **kwargs):
-    #     image = self.get_object()
-    #     return Response(image.highlighted)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
