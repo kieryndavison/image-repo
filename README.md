@@ -22,7 +22,7 @@ Users can navigate to localhost:8000/images/{image-id} to view a specific image.
 
 ![Screenshot](docs/admin-page.png)
 
-The admin page has similar funtionality to the API but only staff users can interact through it. One additional feature that the admin page has is the ability to delete selected/bulk/all images through the action dropdown at the top of the page. 
+The admin page has similar functionality to the API but only staff users can interact through it. One additional feature that the admin page has is the ability to delete selected/bulk/all images through the action dropdown at the top of the page. 
 
 ## Installation and Setup
 First clone the repository
@@ -44,7 +44,7 @@ There are unit tests for the models, views and permissions files. To run all tes
 ```
 python manage.py test
 ```
-If you would like to only run a specific test you can specify that after by providing the full python dotted path to a package, module, TestCase subclass, or test. For example, to run only the tests in the ImageViewSetTest class in the images/test_views.py file you would write:
+If you would like to only run a specific test(s) you can specify an additional parameter that provides the full python dotted path the package, module, TestCase subclass, or test you would like to run. For example, to run only the tests from the ImageViewSetTest class in the images/test_views.py file you would write:
 ```
 python manage.py test images.test_views.ImageViewSetTest
 ```
