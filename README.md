@@ -4,6 +4,12 @@ Image repository for the Fall 2021 Shopify Backend Developer Challenge. Built us
 ## Image Fields
 Image objects consist of the following 7 fields: name, image, desc, owner, price, discount, and stock.  
 
+## Admin page
+
+![Screenshot](docs/admin-page.png)
+
+The admin page displays the images in a tabular format and allows staff users to create, modify and delete images.
+
 ## API 
 
 ![Screenshot](docs/api-homepage.png)
@@ -17,12 +23,6 @@ From localhost:8000/images/ users can make a post request to add another image t
 ![Screenshot](docs/api-specific-image.png)
 
 Users can navigate to localhost:8000/images/{image-id} to view a specific image. If the user logged in is the owner of the image they will also be able to update or delete the image.
-
-## Admin page
-
-![Screenshot](docs/admin-page.png)
-
-The admin page has similar functionality to the API but only staff users can interact through it. One additional feature that the admin page has is the ability to delete selected/bulk/all images through the action dropdown at the top of the page. 
 
 ## Installation and Setup
 First clone the repository
