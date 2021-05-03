@@ -1,4 +1,6 @@
 # image-repo
+"lettuce make commerce better for everyone"
+
 Image repository for the Fall 2021 Shopify Backend Developer Challenge. Built using Django and Django Rest Framework. The application consists of two main parts: the API and the admin page. 
 
 ## Image Fields
