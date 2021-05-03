@@ -24,7 +24,7 @@ class Image(models.Model):
 
     # Calculate the price based on the discount and format it 
     def price_view(self):
-        return '%.2f' % (self.price * (1 - self.discount))
+        return '$%.2f' % (self.price * (1 - self.discount))
     price_view.short_description = "Discounted Price"
 
     # Format the discount amount into a percentage representation 
