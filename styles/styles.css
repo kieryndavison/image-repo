@@ -1,0 +1,39 @@
+.grid-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.grid-item {
+    width: 500px;
+    margin: 10px;
+}
+
+.grid-image {
+    width: 500px;
+    object-fit: contain;
+}
+
+div.second {
+    position: relative;
+}
+
+div.ribbon {
+    height: 35px;
+    width: 180px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    text-align: center;
+    color: #FFF;
+    font-weight: 300;
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+.onSale {
+    background-color: #9C1B21;
+}
+
+.soldOut {
+    background-color: #474747;
+}

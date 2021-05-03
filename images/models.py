@@ -26,10 +26,3 @@ class Image(models.Model):
     def discount_view(self):
         return '%.0f%%' % (self.discount * 100)
     discount_view.short_description = "Discount"
-
-    def image_actions(self):
-        if self.stock > 0:
-            return format_html('<button>Buy</button>')
-        else:
-            return format_html('<button disabled>Buy</button>')
-    image_actions.short_description = 'Actions'
